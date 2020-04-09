@@ -1,5 +1,5 @@
-local util = import '../util.libsonnet';
 local channels = import './channels.libsonnet';
+local util = import 'util.libsonnet';
 
 local map_values = function(channel, options) {
   model: std.extVar(channel + '_model'),
