@@ -1,354 +1,208 @@
 {
   name: 'Marketing Overview',
   category: 'Marketing',
-  filterSchema: [
-    {
-      name: 'dateRange',
-      type: 'mappingDimension',
-      value: {
-        name: 'eventTimestamp',
-      },
-      defaultValue: 'P5Y',
-      isRequired: true,
+  filters: {
+    dateRange: {
+      mappingDimension: 'eventTimestamp',
+      default: 'P5Y',
+      required: true,
     },
-  ],
-  reports: [
-    {
-      name: 'Overall Cost per Click',
-      ttl: 'PT1H',
-      x: 5,
-      y: 0,
-      h: 1,
-      w: 1,
-      component: 'r-number',
-      type: 'segmentation',
+  },
+  reports: [{
+    name: 'Overall Cost per Click',
+    x: 5,
+    y: 0,
+    height: 1,
+    width: 1,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['average_cost_per_click'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'average_cost_per_click',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: null,
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Total Campaigns',
-      ttl: 'PT1H',
-      x: 4,
-      y: 1,
-      h: 1,
-      w: 1,
-      component: 'r-number',
-      type: 'segmentation',
+  }, {
+    name: 'Total Campaigns',
+    x: 4,
+    y: 1,
+    height: 1,
+    width: 1,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_campaigns'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'total_campaigns',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: null,
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Total Clicks',
-      ttl: 'PT1H',
-      x: 1,
-      y: 0,
-      h: 1,
-      w: 2,
-      component: 'r-number',
-      type: 'segmentation',
+  }, {
+    name: 'Total Clicks',
+    x: 1,
+    y: 0,
+    height: 1,
+    width: 2,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_clicks'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'total_clicks',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: null,
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Total Ads',
-      ttl: 'PT1H',
-      x: 5,
-      y: 1,
-      h: 1,
-      w: 1,
-      component: 'r-number',
-      type: 'segmentation',
+  }, {
+    name: 'Total Ads',
+    x: 5,
+    y: 1,
+    height: 1,
+    width: 1,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_ads'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'total_ads',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: null,
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Cost Breakdown',
-      ttl: 'PT1H',
-      x: 2,
-      y: 2,
-      h: 2,
-      w: 2,
-      component: 'r-chart',
-      type: 'segmentation',
+  }, {
+    name: 'Cost Breakdown',
+    x: 2,
+    y: 2,
+    height: 2,
+    width: 2,
+    component: 'r-chart',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_cost'],
+      dimensions: ['date'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
-        measures: [
-          {
-            name: 'total_cost',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
-
-        limit: 1000,
-        filters: null,
-      },
-    },
-    {
-      name: 'ROAS Breakdown',
-      ttl: 'PT1H',
-      x: 0,
-      y: 3,
-      h: 2,
-      w: 2,
-      component: 'r-chart',
-      type: 'segmentation',
-      reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
-        measures: [
-          {
-            name: 'total_cost',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-
-        limit: 1000,
-        reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
-        filters: null,
-      },
-    },
-    {
-      name: 'Conversion Breakdown',
-      ttl: 'PT1H',
-      x: 4,
-      y: 2,
-      h: 2,
-      w: 2,
-      component: 'r-chart',
-      type: 'segmentation',
-      reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
-        measures: [
-          {
-            name: 'total_cost',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-
-        limit: 1000,
-        filters: null,
-        reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
-      },
-    },
-    {
-      name: 'Total Spend',
-      ttl: 'PT1H',
-      x: 0,
-      y: 0,
-      h: 1,
-      w: 1,
-      component: 'r-number',
-      type: 'segmentation',
-      reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'total_cost',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-
-        limit: 1000,
-        filters: null,
-      },
-    },
-    {
-      name: 'Overall Conversion Rate',
-      ttl: 'PT1H',
-      x: 0,
-      y: 2,
-      h: 1,
-      w: 2,
-      component: 'r-number',
-      type: 'segmentation',
-      reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'average_conversion_rate',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: 'line',
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Total Impressions',
-      ttl: 'PT1H',
-      x: 3,
-      y: 0,
-      h: 1,
-      w: 2,
-      component: 'r-number',
-      type: 'segmentation',
+  }, {
+    name: 'ROAS Breakdown',
+    x: 0,
+    y: 3,
+    height: 2,
+    width: 2,
+    component: 'r-chart',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_cost'],
+      dimensions: ['date'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'total_impressions',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: 'line',
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-    {
-      name: 'Overall ROAS',
-      ttl: 'PT1H',
-      x: 2,
-      y: 1,
-      h: 1,
-      w: 2,
-      component: 'r-number',
-      type: 'segmentation',
+  }, {
+    name: 'Conversion Breakdown',
+    x: 4,
+    y: 2,
+    height: 2,
+    width: 2,
+    component: 'r-chart',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_cost'],
+      dimensions: ['date'],
       reportOptions: {
-        model: 'consolidated_marketing',
-        dimensions: [],
-        measures: [
-          {
-            name: 'average_value_per_cost',
-            model: 'consolidated_marketing',
-            relationName: null,
-          },
-        ],
-        reportOptions: {
-          chartOptions: {
-            type: null,
-            columnOptions: [],
-          },
-          tableOptions: {
-            columnOptions: [],
-          },
-          columnOptions: null,
+        chartOptions: {
+          type: 'line',
         },
-
-        limit: 1000,
-        filters: null,
       },
+      limit: 1000,
     },
-  ],
+  }, {
+    name: 'Total Spend',
+    x: 0,
+    y: 0,
+    height: 1,
+    width: 1,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_cost'],
+      limit: 1000,
+    },
+  }, {
+    name: 'Overall Conversion Rate',
+    x: 0,
+    y: 2,
+    height: 1,
+    width: 2,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['average_conversion_rate'],
+      reportOptions: {
+        chartOptions: {
+          type: null,
+        },
+      },
+      limit: 1000,
+    },
+  }, {
+    name: 'Total Impressions',
+    x: 3,
+    y: 0,
+    height: 1,
+    width: 2,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['total_impressions'],
+      reportOptions: {
+        chartOptions: {
+          type: null,
+        },
+      },
+      limit: 1000,
+    },
+  }, {
+    name: 'Overall ROAS',
+    x: 2,
+    y: 1,
+    height: 1,
+    width: 2,
+    component: 'r-number',
+    type: 'segmentation',
+    options: {
+      model: 'consolidated_marketing',
+      measures: ['average_value_per_cost'],
+      reportOptions: {
+        chartOptions: {
+          type: null,
+        },
+      },
+      limit: 1000,
+    },
+  }],
 }
