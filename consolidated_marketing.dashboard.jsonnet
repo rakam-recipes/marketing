@@ -21,14 +21,14 @@
       h: 1,
       w: 1,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'average_cost_per_click',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -42,7 +42,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -55,14 +55,14 @@
       h: 1,
       w: 1,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'total_campaigns',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -76,7 +76,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -89,14 +89,14 @@
       h: 1,
       w: 2,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'total_clicks',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -110,7 +110,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -123,14 +123,14 @@
       h: 1,
       w: 1,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'total_ads',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -144,7 +144,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -157,19 +157,19 @@
       h: 2,
       w: 2,
       component: 'r-chart',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
-        dimensions: [{ modelName: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
+        model: 'consolidated_marketing',
+        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
         measures: [
           {
             name: 'total_cost',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
         reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -182,18 +182,18 @@
       h: 2,
       w: 2,
       component: 'r-chart',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
-        dimensions: [{ modelName: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
+        model: 'consolidated_marketing',
+        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
         measures: [
           {
             name: 'total_cost',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
         filters: null,
@@ -207,18 +207,18 @@
       h: 2,
       w: 2,
       component: 'r-chart',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
-        dimensions: [{ modelName: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
+        model: 'consolidated_marketing',
+        dimensions: [{ model: 'consolidated_marketing', relationName: null, postOperation: null, name: 'date' }],
         measures: [
           {
             name: 'total_cost',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
         reportOptions: { chartOptions: { columnOptions: [], type: 'line' }, tableOptions: { columnOptions: [] } },
@@ -232,18 +232,18 @@
       h: 1,
       w: 1,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'total_cost',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -256,14 +256,14 @@
       h: 1,
       w: 2,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'average_conversion_rate',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -277,7 +277,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -290,14 +290,14 @@
       h: 1,
       w: 2,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'total_impressions',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -311,7 +311,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
@@ -324,14 +324,14 @@
       h: 1,
       w: 2,
       component: 'r-number',
-      type: 1,
+      type: 'segmentation',
       reportOptions: {
-        modelName: 'consolidated_marketing',
+        model: 'consolidated_marketing',
         dimensions: [],
         measures: [
           {
             name: 'average_value_per_cost',
-            modelName: 'consolidated_marketing',
+            model: 'consolidated_marketing',
             relationName: null,
           },
         ],
@@ -345,7 +345,7 @@
           },
           columnOptions: null,
         },
-        defaultDateRange: 'P14D',
+
         limit: 1000,
         filters: null,
       },
